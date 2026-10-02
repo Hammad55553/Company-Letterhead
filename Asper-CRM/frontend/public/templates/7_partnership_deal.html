@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  .page {
+    background-color: white;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 20mm;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #052950;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+  }
+  .header img {
+    width: 150px;
+  }
+  .header-text {
+    text-align: right;
+    color: #052950;
+  }
+  .content {
+    min-height: 150mm;
+  }
+  /* Letter meta etc */
+  .meta-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #555;
+  }
+  .recipient {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .subject {
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: underline;
+    text-align: center;
+  }
+  .body-text {
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-align: justify;
+  }
+  /* Signature area */
+  .signature-section {
+    margin-top: 50px;
+  }
+  .signature-box {
+    width: 250px;
+  }
+  .signature-line {
+    border-top: 1px solid #000;
+    margin: 40px 0 10px 0;
+  }
+  
+  
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #052950;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+  }
+  .header img {
+    width: 140px;
+  }
+  .header-text {
+    text-align: right;
+    color: #052950;
+  }
+  .header-text h2 {
+    margin: 0;
+    font-size: 22px;
+  }
+  .header-text p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+  }
+  .content {
+    position: relative;
+    min-height: 500px;
+  }
+  /* Letter meta etc */
+  .meta-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+  }
+  .recipient {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .subject {
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+  .body-text {
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+  /* Signature area */
+  .signature-section {
+    margin-top: 60px;
+    position: relative;
+  }
+  .signature-box {
+    width: 250px;
+  }
+  .signature-line {
+    border-top: 1px solid #000;
+    margin: 40px 0 10px 0;
+  }
+  .signature-name {
+    font-weight: bold;
+  }
+  .signature-title {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  
+  
+  .page {
+    background-color: white;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 20mm;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #052950;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+  }
+  .header img {
+    width: 150px;
+  }
+  .header-text {
+    text-align: right;
+    color: #052950;
+  }
+  .content {
+    min-height: 150mm;
+  }
+  /* Letter meta etc */
+  .meta-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #555;
+  }
+  .recipient {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .subject {
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: underline;
+    text-align: center;
+  }
+  .body-text {
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-align: justify;
+  }
+  /* Signature area */
+  .signature-section {
+    margin-top: 50px;
+  }
+  .signature-box {
+    width: 250px;
+  }
+  .signature-line {
+    border-top: 1px solid #000;
+    margin: 40px 0 10px 0;
+  }
+  
+  
+  
+
+  .stamp-container {
+    position: relative;
+    width: 320px; /* Expanded for more room */
+    height: 320px;
+    border-radius: 50%;
+    /* Outer and inner rings */
+    border: 5px solid #1a1a1a;
+    box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 4px #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #1a1a1a;
+    background-color: transparent;
+    
+    /* Subtle rotation for realistic stamp placement */
+    transform: rotate(-2deg);
+    
+    /* SVG Grunge filter to give realistic ink effect */
+    filter: url(#grunge-ink) contrast(1.2) drop-shadow(0px 0px 1px rgba(0,0,0,0.2));
+  }
+
+  .curved-text-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  .inner-ring {
+    position: absolute;
+    width: 220px; /* Moved outward away from center */
+    height: 220px;
+    border-radius: 50%;
+    border: 2px solid #1a1a1a;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    margin-top: -10px;
+  }
+
+  .logo {
+    width: 80px;
+    height: auto;
+    /* Since background is removed, we can safely force it to pure black */
+    filter: grayscale(100%) contrast(200%) brightness(0);
+    margin-bottom: 5px;
+  }
+
+  .ceo-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 5px;
+  }
+
+  .ceo-name {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+  }
+
+  .stars {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+    padding: 0 18px; /* Adjusted to perfect optical center */
+    font-size: 14px; /* Reduced so it doesn't touch lines */
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #1a1a1a;
+    line-height: 1;
+  }
+
+
+.stamp-container { transform: scale(0.65) rotate(-3deg); position: absolute; bottom: 50mm; right: 30mm; opacity: 0.85; z-index: -1; }
+
+
+.stamp-container { transform: scale(0.6) rotate(-3deg); position: absolute; bottom: 0; right: 20px; opacity: 0.85; z-index: -1; }
+
+
+.stamp-container { transform: scale(0.65) rotate(-3deg); position: absolute; bottom: 50mm; right: 30mm; opacity: 0.85; z-index: -1; }
+
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <img src="unnamed-removebg-preview.png" alt="Asper InfoTech Logo" />
+    <div class="header-text">
+      <h2 style="margin:0;">Asper InfoTech (Pvt) Ltd.</h2>
+      <p style="margin:5px 0 0 0;">Hasilpur, Punjab, Pakistan</p>
+    </div>
+  </div>
+  
+  <main class="content">
+        <div class="meta-container">
+            <div class="meta-box"><span>Ref No //</span> AIT/BD/2026/009</div>
+            <div class="meta-box"><span>Date //</span> 01 October 2026</div>
+        </div>
+
+        <div class="recipient">
+            GLOBAL TECH INNOVATIONS
+        </div>
+
+        <div class="subject">
+            MEMORANDUM OF UNDERSTANDING (MoU)
+        </div>
+
+        <div class="body-text">
+            <p>This Memorandum of Understanding (MoU) serves to establish a formal partnership between <strong>Asper InfoTech Private Limited</strong> and <strong>Global Tech Innovations</strong>.</p>
+       <p>The purpose of this partnership is to collaborate on <strong>Artificial Intelligence and Cloud Solutions</strong> for the mutual benefit of both organizations. Both companies agree to share technological resources, APIs, and cross-promote each other's digital products.</p>
+       <p>This partnership is effective immediately and will remain valid for a period of two (2) years, subject to renewal upon mutual agreement.</p>
+       <p>We are excited about the opportunities this collaboration will bring to the technology sector in Pakistan and globally.</p>
+       <br><br><br>
+       <div style="display:flex; justify-content:space-between; width:100%; margin-top:20px;">
+           <div>______________________<br><strong>Global Tech Innovations</strong></div>
+       </div>
+        </div>
+        
+        <div class="signature-section">
+            <div class="signature-box">
+                <div class="signature-closing">Sincerely,</div>
+                <div class="signature-line"></div>
+                <div class="signature-name">Sannia Aslam</div>
+                <div class="signature-title">Co-Founder & Director</div>
+                <div class="signature-title" style="color: var(--brand-teal); font-weight: 700;">Asper InfoTech (Pvt) Ltd.</div>
+            </div>
+        </div>
+
+</main>
+  
+  
+  <div class="header">
+    <img src="unnamed-removebg-preview.png" alt="Asper InfoTech Logo" />
+    <div class="header-text">
+      <h2>Asper InfoTech (Pvt) Ltd.</h2>
+      <p>Hasilpur, Punjab, Pakistan</p>
+    </div>
+  </div>
+  
+  <main class="content">
+    <!-- CONTENT -->
+  </main>
+  
+  
+<div class="page">
+  <div class="header">
+    <img src="unnamed-removebg-preview.png" alt="Asper InfoTech Logo" />
+    <div class="header-text">
+      <h2 style="margin:0;">Asper InfoTech (Pvt) Ltd.</h2>
+      <p style="margin:5px 0 0 0;">Hasilpur, Punjab, Pakistan</p>
+    </div>
+  </div>
+  
+  <main class="content">
+    <!-- CONTENT -->
+  </main>
+  
+  
+
+<!-- SVG Filter for Rubber Stamp Ink Effect -->
+<svg style="position:absolute; width:0; height:0;" aria-hidden="true">
+  <defs>
+    <filter id="grunge-ink">
+      <!-- Create noise -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" result="noise" />
+      <!-- High contrast noise to create isolated specs -->
+      <feComponentTransfer in="noise" result="highContrastNoise">
+        <feFuncA type="linear" slope="3" intercept="-1" />
+      </feComponentTransfer>
+      <!-- Cut out noise from the stamp -->
+      <feComposite operator="out" in="SourceGraphic" in2="highContrastNoise" result="distressed" />
+      <!-- Slight blur for ink bleed -->
+      <feGaussianBlur stdDeviation="0.3" in="distressed" result="blurred" />
+      <!-- Sharpen the edges back up slightly -->
+      <feComponentTransfer in="blurred" result="final">
+        <feFuncA type="linear" slope="3" intercept="-0.1" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<div class="stamp-container">
+  
+  <svg class="curved-text-layer" viewBox="0 0 320 320">
+    <!-- Top Arc: radius 121 (centers text in 320px container) -->
+    <path id="topCurve" d="M 39,160 A 121,121 0 0,1 281,160" fill="none" />
+    <text font-family="'Arial', sans-serif" font-size="28" font-weight="bold" fill="#1a1a1a" letter-spacing="3">
+      <textPath href="#topCurve" startOffset="50%" text-anchor="middle">ASPER INFOTECH</textPath>
+    </text>
+    
+    <!-- Bottom Arc: radius 148 (centers text in 320px container) -->
+    <path id="bottomCurve" d="M 12,160 A 148,148 0 0,0 308,160" fill="none" />
+    <text font-family="'Arial', sans-serif" font-size="24" font-weight="bold" fill="#1a1a1a" letter-spacing="4">
+      <textPath href="#bottomCurve" startOffset="50%" text-anchor="middle">PRIVATE LIMITED</textPath>
+    </text>
+  </svg>
+
+  <!-- Inner circle boundary line -->
+  <div class="inner-ring"></div>
+
+  <div class="stars">
+    <span>&lt;/&gt;</span>
+    <span>&lt;/&gt;</span>
+  </div>
+  
+  <div class="center-content">
+    <img src="unnamed-removebg-preview.png" class="logo" alt="Asper InfoTech Logo" />
+    <div class="ceo-title">— CEO —</div>
+    <div class="ceo-name">HAMMAD ASLAM</div>
+  </div>
+
+</div>
+
+
+</div>
+
+
+</div>
+</body>
+</html>

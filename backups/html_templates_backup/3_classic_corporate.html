@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root { --primary-color: #052950; --accent-color: #11b6aa; }
+  body { font-family: 'Inter', sans-serif; background: #e2e8f0; display: flex; justify-content: center; padding: 20px; margin: 0; }
+  .letterhead { width: 210mm; min-height: 297mm; background: white; padding: 60px; box-sizing: border-box; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; position: relative; }
+  .header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 25px; }
+  .logo { height: 65px; }
+  .company-title { text-align: right; }
+  .company-title h1 { margin: 0; font-size: 24px; color: var(--primary-color); font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+  .company-title p { margin: 2px 0 0 0; color: var(--accent-color); font-size: 12px; font-weight: 700; letter-spacing: 0.5px; }
+  .divider { height: 2px; background: #f0f0f0; position: relative; margin-bottom: 40px; }
+  .divider::after { content: ''; position: absolute; top: 0; left: 0; width: 80px; height: 2px; background: var(--primary-color); }
+  .content { flex: 1; color: #333; line-height: 1.6; z-index: 10; }
+  .watermark { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.04; width: 60%; z-index: 0; pointer-events: none; }
+  .footer { display: flex; justify-content: space-between; font-size: 11px; color: #666; border-top: 1px solid #f0f0f0; padding-top: 25px; z-index: 10; }
+  .footer div strong { color: var(--primary-color); margin-right: 5px; }
+</style>
+</head>
+<body>
+<div class="letterhead">
+  <img src="../assets/unnamed-removebg-preview.png" class="watermark" alt="Watermark" />
+  <header class="header">
+    <img src="../assets/unnamed-removebg-preview.png" class="logo" alt="Asper InfoTech" />
+    <div class="company-title">
+      <h1>Asper InfoTech</h1>
+      <p>PRIVATE LIMITED</p>
+    </div>
+  </header>
+  <div class="divider"></div>
+  <main class="content">
+    <p><strong>Date:</strong> 01 October 2026</p>
+    <p>This is **Style 3: The Classic Corporate**.<br><br>
+       A highly traditional, crisp, and incredibly premium layout. The logo anchors the top left while the company name is beautifully typeset on the top right. It uses a very thin accent line separator and a bright, 4% opacity watermark in the center. Extremely official and perfect for embassy/government correspondence.</p>
+  </main>
+  <footer class="footer">
+    <div><strong>A:</strong> Hasilpur, Punjab, Pakistan</div>
+    <div><strong>P:</strong> +92 312 0441431</div>
+    <div><strong>W:</strong> asperinfotech.com</div>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root { --primary-color: #052950; --accent-color: #11b6aa; }
+  body { font-family: 'Inter', sans-serif; background: #e2e8f0; display: flex; justify-content: center; padding: 20px; margin: 0; }
+  .letterhead { width: 210mm; min-height: 297mm; background: white; padding: 50px 60px 50px 80px; box-sizing: border-box; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; position: relative; }
+  .side-border { position: absolute; left: 0; top: 0; bottom: 0; width: 8px; background: linear-gradient(to bottom, var(--primary-color) 40%, var(--accent-color) 100%); }
+  .header { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 25px; border-bottom: 1px solid #f0f0f0; }
+  .logo { height: 75px; }
+  .contact-info { text-align: right; font-size: 11px; color: #555; line-height: 1.6; }
+  .contact-info strong { color: var(--primary-color); font-size: 13px; }
+  .content { flex: 1; padding: 40px 0; color: #333; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="letterhead">
+  <div class="side-border"></div>
+  <header class="header">
+    <img src="../assets/unnamed-removebg-preview.png" class="logo" alt="Asper InfoTech" />
+    <div class="contact-info">
+      <strong>Asper InfoTech Private Limited</strong><br>
+      Hasilpur, Punjab, Pakistan<br>
+      +92 312 0441431<br>
+      asperinfotech.com
+    </div>
+  </header>
+  <main class="content">
+    <p><strong>Ref:</strong> AIT/2026/002</p>
+    <p>This is **Style 2: The Creative Edge**.<br><br>
+       This layout moves all contact details strictly into the header, leaving the bottom completely clean. It features an ultra-thin, elegant gradient line running down the extreme left edge of the page. It is bright, spacious, and feels very much like a high-end SaaS or modern tech agency letterhead without relying on any dark or heavy blocks.</p>
+  </main>
+</div>
+</body>
+</html>

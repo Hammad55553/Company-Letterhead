@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asper InfoTech CRM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@500;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Sora', sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #f1f5f9;
+            overflow: hidden;
+        }
+        .sidebar {
+            width: 300px;
+            background: #052950;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+        .sidebar-header {
+            padding: 25px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .sidebar-header h2 {
+            margin: 0;
+            font-family: 'Jura', sans-serif;
+            color: #11b6aa;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .sidebar-menu {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px 0;
+        }
+        .menu-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-left: 4px solid transparent;
+        }
+        .menu-item:hover, .menu-item.active {
+            background: rgba(17, 182, 170, 0.1);
+            border-left: 4px solid #11b6aa;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #cbd5e1;
+        }
+        .top-bar {
+            height: 60px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .top-bar button {
+            background: #11b6aa;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .top-bar button:hover {
+            background: #0e968c;
+        }
+        .viewer-container {
+            flex: 1;
+            padding: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 100%;
+            background: white;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>ASPER CRM</h2>
+            <div style="font-size: 11px; opacity: 0.7; margin-top: 5px;">Letterhead Generator</div>
+        </div>
+        <div class="sidebar-menu" id="menu">
+            <div class="menu-item active" onclick="loadTemplate('1_blank_letterhead.html', this)">Blank Letterhead</div>
+            <div class="menu-item" onclick="loadTemplate('4_job_offer_letter.html', this)">Job Offer</div>
+            <div class="menu-item" onclick="loadTemplate('5_appointment_letter.html', this)">Appointment Letter</div>
+            <div class="menu-item" onclick="loadTemplate('6_contract_agreement.html', this)">Contract Agreement</div>
+            <div class="menu-item" onclick="loadTemplate('7_partnership_deal.html', this)">Partnership MoU</div>
+            <div class="menu-item" onclick="loadTemplate('8_recommendation_letter.html', this)">Recommendation Letter</div>
+            <div class="menu-item" onclick="loadTemplate('11_experience_certificate.html', this)">Experience Certificate</div>
+            <div class="menu-item" onclick="loadTemplate('10_warning_letter.html', this)">Warning Letter</div>
+            <div class="menu-item" onclick="loadTemplate('9_resignation_acceptance.html', this)">Resignation Acceptance</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="top-bar">
+            <div>
+                <strong style="color: #052950; font-family: 'Jura';">Active Document:</strong>
+                <span id="current-doc-name" style="margin-left: 10px; color: #64748b; font-size: 14px;">Blank Letterhead</span>
+            </div>
+            <button onclick="printIframe()">🖨️ Print Document</button>
+        </div>
+        
+        <div class="viewer-container">
+            <iframe id="letter-frame" src="1_blank_letterhead.html"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function loadTemplate(filename, element) {
+            // Update iframe
+            document.getElementById('letter-frame').src = filename;
+            
+            // Update Active State
+            document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+            
+            // Update Top Bar text
+            document.getElementById('current-doc-name').innerText = element.innerText;
+        }
+
+        function printIframe() {
+            const iframe = document.getElementById('letter-frame');
+            iframe.contentWindow.focus();
+            iframe.contentWindow.print();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root { --primary-color: #052950; --accent-color: #11b6aa; }
+  body { font-family: 'Inter', sans-serif; background: #e2e8f0; display: flex; justify-content: center; padding: 20px; margin: 0; }
+  .letterhead { width: 210mm; min-height: 297mm; background: white; padding: 60px; box-sizing: border-box; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+  .header { text-align: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 30px; position: relative; }
+  .header::after { content: ''; position: absolute; bottom: -1px; left: 35%; width: 30%; height: 2px; background: var(--accent-color); }
+  .logo { height: 90px; margin-bottom: 10px; }
+  .content { flex: 1; padding: 40px 0; color: #333; line-height: 1.6; }
+  .footer { text-align: center; padding-top: 25px; font-size: 12px; color: #666; border-top: 1px solid #f0f0f0; }
+  .footer span { margin: 0 12px; }
+</style>
+</head>
+<body>
+<div class="letterhead">
+  <header class="header">
+    <img src="../assets/unnamed-removebg-preview.png" class="logo" alt="Asper InfoTech" />
+  </header>
+  <main class="content">
+    <p><strong>Date:</strong> 01 October 2026</p>
+    <p><strong>To Whom It May Concern,</strong></p>
+    <p>This is **Style 1: The Clean Minimalist**.<br><br>
+       It removes all dark and heavy blocks entirely. The logo is perfectly centered to give a balanced, formal look, supported by a very thin, elegant accent line. The entire layout is bright, airy, and utilizes maximum whitespace for a highly polished, expensive corporate feel.</p>
+  </main>
+  <footer class="footer">
+    <span>Hasilpur, Punjab, Pakistan</span>|<span>+92 312 0441431</span>|<span>asperinfotech.com</span>
+  </footer>
+</div>
+</body>
+</html>
